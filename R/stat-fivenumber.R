@@ -71,7 +71,7 @@ StatFivenumber <- ggplot2::ggproto("StatFivenumber", ggplot2::Stat,
   },
 
   setup_params = function(data, params) {
-    params$width <- params$width %||% (resolution(data$x %||% 0) * 0.75)
+    params$width <- params$width #%||% (resolution(data$x %||% 0) * 0.75)
 
     if (is.double(data$x) && !has_groups(data) && any(data$x != data$x[1L])) {
       warning(
